@@ -11,7 +11,54 @@ namespace MobilwebSite.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                InitControls();
+            }
         }
+
+
+        protected void btn_in_Click(object sender, EventArgs e)
+        {
+            string errMsg = CheckFormData();
+            if (errMsg == null)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        protected void btn_out_Click(object sender, EventArgs e)
+        {
+            string errMsg = CheckFormData();
+            if (errMsg == null)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+
+        private string CheckFormData()
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+
+        private void InitControls()
+        {
+            this.tb_data.Text = System.DateTime.Now.ToString("yyyy-MM-dd");
+            this.tb_time.Text = System.DateTime.Now.ToString("hh:mm:ss");
+        }
+
+        
     }
 }

@@ -3,11 +3,11 @@
     <div class="jumbotron" style="background-color:#eee;padding-top:4px; padding-bottom:4px">
         <div class="row rowmargin" >
             <div class="col-xs-3">Data</div>
-            <div class="col-xs-9" ><asp:TextBox ID="tb_data" runat="server" Width="200px"></asp:TextBox></div>
+            <div class="col-xs-9" ><asp:TextBox ID="tb_data" runat="server" Width="200px" ReadOnly="true" Enabled="false"></asp:TextBox></div>
         </div>
         <div class="row rowmargin">
             <div class="col-xs-3">Time</div>
-            <div class="col-xs-9"><asp:TextBox ID="tb_time" runat="server" Width="200px"></asp:TextBox></div>
+            <div class="col-xs-9"><asp:TextBox ID="tb_time" runat="server" Width="200px" ReadOnly="true" Enabled="false"></asp:TextBox></div>
         </div>
         <br />
        <div class="row rowmargin">
@@ -18,8 +18,8 @@
         <div class="row rowmargin" >
             <div class="col-xs-3"></div>
             <div class="col-xs-9" style="padding-left:16px">
-                <asp:Button ID="btn_in" runat="server" Text="In" CssClass="btn btn-primary btn-lg" Width="80px"/>&nbsp&nbsp&nbsp&nbsp
-                <asp:Button ID="btn_out" runat="server" Text="Out" CssClass="btn btn-primary btn-lg" Width="80px"/> 
+                <asp:Button ID="btn_in" runat="server" Text="In" CssClass="btn btn-primary btn-lg" Width="80px" OnClick="btn_in_Click"/>&nbsp&nbsp&nbsp&nbsp
+                <asp:Button ID="btn_out" runat="server" Text="Out" CssClass="btn btn-primary btn-lg" Width="80px" OnClick="btn_out_Click"/> 
             </div>
         </div>
     </div>
