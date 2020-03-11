@@ -10,6 +10,8 @@ namespace MobilwebSite.Web
 {
     public partial class attendance : System.Web.UI.Page
     {
+        //todo message success .color
+        //check name's dal?
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
