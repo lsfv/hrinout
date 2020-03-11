@@ -21,25 +21,31 @@ namespace MobilwebSite.Web
 
         protected void btn_in_Click(object sender, EventArgs e)
         {
-            string errMsg = CheckFormData();
-            if (string.IsNullOrWhiteSpace(errMsg))
-            {
-                int res= BLL.Attendance.Insert();
-                this.label_msg.InnerText = "success:" + res;
-            }
-            else
-            {
-                this.label_msg.InnerText = errMsg;
-            }
+            btn_inout("IN");
         }
 
         protected void btn_out_Click(object sender, EventArgs e)
         {
+            btn_inout("OUT");
+        }
+
+        private void btn_inout(string type)
+        {
             string errMsg = CheckFormData();
             if (string.IsNullOrWhiteSpace(errMsg))
             {
-                int res = BLL.Attendance.Insert();
-                this.label_msg.InnerText = "success:" + res;
+                string staffnumber = this.tb_staffnumber.Text;
+                Model.t_AttendanceWebData newrecord = new Model.t_AttendanceWebData();
+                newrecord.StaffNumber = staffnumber;
+                newrecord.LogDate = System.DateTime.Now;
+                newrecord.LogTime = System.DateTime.Now;
+                newrecord.Type = type;
+
+
+                BLL.t_AttendanceWebData.Add(newrecord);
+
+               this.label_msg.InnerText = "success.";
+                
             }
             else
             {
@@ -51,9 +57,21 @@ namespace MobilwebSite.Web
         private string CheckFormData()
         {
             string msg = "";
-            if (string.IsNullOrWhiteSpace(this.tb_staffnumber.Text))
+            string staffNumber = this.tb_staffnumber.Text;
+            if (string.IsNullOrWhiteSpace(staffNumber))
             {
                 msg = "please input staff number.";
+            }
+            else
+            {
+                bool res= BLL.Attendance.CheckStaffName(staffNumber);
+                if (!res)
+                {
+                    msg = "please check your staff Name";
+                }
+                else
+                {
+                }
             }
             return msg;
         }

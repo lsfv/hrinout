@@ -41,8 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addendancewebdata.cs" />
+    <Compile Include="addendancewebdata_dal.cs" />
+    <Compile Include="addendanceweebdata_bll.cs" />
     <Compile Include="Attendance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dbhelper\ThreeLyerLibraly\DBUtilityLB.csproj">
+      <Project>{0203b78e-4424-48ab-bfc0-9dd82e3584d4}</Project>
+      <Name>DBUtilityLB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
