@@ -22,5 +22,8 @@
                 <asp:Button ID="btn_out" runat="server" Text="Out" CssClass="btn btn-primary btn-lg" Width="80px" OnClick="btn_out_Click"/> 
             </div>
         </div>
+        <div class="row rowmargin" >
+            <div class="col-xs-12" style="color:red"><label id="label_msg" runat="server"></label></div>
+        </div>
     </div>
 </asp:Content>

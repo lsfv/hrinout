@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobilwebSite.Web.webhelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,38 +22,43 @@ namespace MobilwebSite.Web
         protected void btn_in_Click(object sender, EventArgs e)
         {
             string errMsg = CheckFormData();
-            if (errMsg == null)
+            if (string.IsNullOrWhiteSpace(errMsg))
             {
-
+                int res= BLL.Attendance.Insert();
+                this.label_msg.InnerText = "success:" + res;
             }
             else
             {
-
+                this.label_msg.InnerText = errMsg;
             }
         }
 
         protected void btn_out_Click(object sender, EventArgs e)
         {
             string errMsg = CheckFormData();
-            if (errMsg == null)
+            if (string.IsNullOrWhiteSpace(errMsg))
             {
-
+                int res = BLL.Attendance.Insert();
+                this.label_msg.InnerText = "success:" + res;
             }
             else
             {
-
+                this.label_msg.InnerText = errMsg;
             }
         }
 
 
         private string CheckFormData()
         {
-            throw new NotImplementedException();
+            string msg = "";
+            if (string.IsNullOrWhiteSpace(this.tb_staffnumber.Text))
+            {
+                msg = "please input staff number.";
+            }
+            return msg;
         }
 
         
-
-
         private void InitControls()
         {
             this.tb_data.Text = System.DateTime.Now.ToString("yyyy-MM-dd");
