@@ -44,8 +44,9 @@
     <Compile Include="addendancewebdata.cs" />
     <Compile Include="addendancewebdata_dal.cs" />
     <Compile Include="addendanceweebdata_bll.cs" />
-    <Compile Include="Attendance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="staff_bll.cs" />
+    <Compile Include="staff_dal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dbhelper\ThreeLyerLibraly\DBUtilityLB.csproj">

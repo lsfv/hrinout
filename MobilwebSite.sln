@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBUtilityLB", "dbhelper\Thr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function", "lib\threadutility2\my\Function\Function.csproj", "{084CD930-5B88-40A8-A521-71DD2321642A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHC.OrderWater.Commons", "lib\threadutility2\other\WHC.OrderWater.Commons\WHC.OrderWater.Commons.csproj", "{53AC195E-DCFF-47C4-BC02-7E0241FF520C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{682328C7-A131-410C-9CE3-12775B8BEC25}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{084CD930-5B88-40A8-A521-71DD2321642A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{084CD930-5B88-40A8-A521-71DD2321642A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{084CD930-5B88-40A8-A521-71DD2321642A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53AC195E-DCFF-47C4-BC02-7E0241FF520C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53AC195E-DCFF-47C4-BC02-7E0241FF520C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53AC195E-DCFF-47C4-BC02-7E0241FF520C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53AC195E-DCFF-47C4-BC02-7E0241FF520C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{682328C7-A131-410C-9CE3-12775B8BEC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{682328C7-A131-410C-9CE3-12775B8BEC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{682328C7-A131-410C-9CE3-12775B8BEC25}.Release|Any CPU.ActiveCfg = Release|Any CPU

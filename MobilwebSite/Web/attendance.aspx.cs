@@ -10,8 +10,8 @@ namespace MobilwebSite.Web
 {
     public partial class attendance : System.Web.UI.Page
     {
-        //todo message success .color
-        //check name's dal?
+        //todo check name's dal?
+        //todo db password
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -37,17 +37,23 @@ namespace MobilwebSite.Web
             if (string.IsNullOrWhiteSpace(errMsg))
             {
                 string staffnumber = this.tb_staffnumber.Text;
+                DateTime dateTime_now = System.DateTime.Now;
+
                 Model.t_AttendanceWebData newrecord = new Model.t_AttendanceWebData();
                 newrecord.StaffNumber = staffnumber;
-                newrecord.LogDate = System.DateTime.Now;
-                newrecord.LogTime = System.DateTime.Now;
+                newrecord.LogDate = dateTime_now;
+                newrecord.LogTime = dateTime_now;
                 newrecord.Type = type;
 
-
-                BLL.t_AttendanceWebData.Add(newrecord);
-
-               this.label_msg.InnerText = "success.";
-                
+                try
+                {
+                    BLL.t_AttendanceWebData.Add(newrecord);
+                    this.label_msg.InnerHtml = "Success :" +type+ ".&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + staffnumber + ".&nbsp&nbsp&nbsp&nbsp&nbsp" + dateTime_now.ToString("yyyy-MM-dd hh:mm:ss");
+                }
+                catch(Exception e)
+                {
+                    this.label_msg.InnerText = e.ToString();
+                }
             }
             else
             {
@@ -66,13 +72,10 @@ namespace MobilwebSite.Web
             }
             else
             {
-                bool res= BLL.Attendance.CheckStaffName(staffNumber);
+                bool res= BLL.t_staff.Exists(staffNumber);
                 if (!res)
                 {
-                    msg = "please check your staff Name";
-                }
-                else
-                {
+                    msg = "please check your staff number";
                 }
             }
             return msg;
